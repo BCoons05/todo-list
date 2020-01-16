@@ -1,2 +1,2 @@
 app.sqlite
-secrets.py
+.env
