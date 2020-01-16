@@ -6,8 +6,6 @@ from flask_heroku import Heroku
 from environs import Env
 import os
 
-from secrets import DATABASE_URL
-
 
 app = Flask(__name__)
 CORS(app)
