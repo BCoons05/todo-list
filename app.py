@@ -5,6 +5,8 @@ from flask_cors import CORS
 from flask_heroku import Heroku
 import os
 
+from secrets import DATABASE_URL
+
 
 app = Flask(__name__)
 CORS(app)
@@ -12,7 +14,7 @@ heroku = Heroku(app)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 # app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "app.sqlite")
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://netfgqtjwmiscu:77f786b3579de1fc6b81a623911ea7e6982cb2d2183dc7dc8daa49d14a96b6c6@ec2-174-129-33-25.compute-1.amazonaws.com:5432/dcoi139fo26qfn"
+app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
 
 
 db = SQLAlchemy(app)
